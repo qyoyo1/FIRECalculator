@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FIRE Calculator Web</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="container dashboard">
+    <header class="top-banner">
+      <div class="brand-wrap">
+        <div class="qoales-icon" aria-hidden="true">
+          <span class="q-ring"></span>
+          <span class="q-tail"></span>
+          <span class="q-dot"></span>
+        </div>
+        <div class="brand-text">
+          <h1>Qoales</h1>
+          <p>FIRE Calculator</p>
+        </div>
+      </div>
+      <div class="banner-ages">
+        <label>
+          Current Age
+          <input id="currentAge" type="number" min="0" step="1" />
+        </label>
+        <label>
+          FIRE Age
+          <input id="fireAge" type="number" min="0" step="1" />
+        </label>
+      </div>
+    </header>
+
+    <section class="card inputs-card">
+      <h2>Current Assets</h2>
+      <div id="assetInputs" class="asset-list"></div>
+
+      <div id="validation" class="validation"></div>
+
+      <section class="inner-card">
+        <h3>Current Portfolio Summary</h3>
+        <p id="portfolioFxInfo" class="summary-note"></p>
+        <div id="portfolioByCurrency"></div>
+        <div class="summary-row total">
+          <span>Total in USD</span>
+          <strong id="portfolioUsdTotal">$0.00</strong>
+        </div>
+      </section>
+    </section>
+
+    <section class="card income-card">
+      <h2>Expected Annual Income</h2>
+      <div class="asset-row">
+        <div class="asset-name">Annual Income</div>
+        <div class="asset-inputs">
+          <label>
+            <span class="currency-icon-label" aria-label="Currency" title="Currency"></span>
+            <select id="expectedIncomeCurrency">
+              <option value="USD">USD</option>
+              <option value="CHF">CHF</option>
+              <option value="EUR">EUR</option>
+              <option value="RMB">RMB</option>
+            </select>
+          </label>
+          <label>
+            Amount
+            <input id="expectedIncomeAmount" type="text" inputmode="decimal" />
+          </label>
+        </div>
+      </div>
+
+      <div class="asset-row">
+        <div class="asset-name">RealEstate Income</div>
+        <div class="asset-inputs">
+          <label>
+            <span class="currency-icon-label" aria-label="Currency" title="Currency"></span>
+            <select id="realEstateIncomeCurrency">
+              <option value="USD">USD</option>
+              <option value="CHF">CHF</option>
+              <option value="EUR">EUR</option>
+              <option value="RMB">RMB</option>
+            </select>
+          </label>
+          <label>
+            Amount
+            <input id="realEstateIncomeAmount" type="text" inputmode="decimal" />
+          </label>
+        </div>
+      </div>
+
+      <div class="asset-row">
+        <div class="asset-name">Rent Expenses</div>
+        <div class="asset-inputs">
+          <label>
+            <span class="currency-icon-label" aria-label="Currency" title="Currency"></span>
+            <select id="rentExpensesCurrency">
+              <option value="USD">USD</option>
+              <option value="CHF">CHF</option>
+              <option value="EUR">EUR</option>
+              <option value="RMB">RMB</option>
+            </select>
+          </label>
+          <label>
+            Amount
+            <input id="rentExpensesAmount" type="text" inputmode="decimal" />
+          </label>
+        </div>
+      </div>
+
+      <div class="asset-row">
+        <div class="asset-name">Shared Expenses</div>
+        <div class="asset-inputs">
+          <label>
+            <span class="currency-icon-label" aria-label="Currency" title="Currency"></span>
+            <select id="sharedExpensesCurrency">
+              <option value="USD">USD</option>
+              <option value="CHF">CHF</option>
+              <option value="EUR">EUR</option>
+              <option value="RMB">RMB</option>
+            </select>
+          </label>
+          <label>
+            Amount
+            <input id="sharedExpensesAmount" type="text" inputmode="decimal" />
+          </label>
+        </div>
+      </div>
+
+      <section class="inner-card">
+        <h3>Expected Income Summary</h3>
+        <p id="expectedIncomeFxInfo" class="summary-note"></p>
+        <div id="expectedIncomeByCurrency"></div>
+        <div class="summary-row total">
+          <span>Total in USD</span>
+          <strong id="expectedIncomeUsdTotal">$0.00</strong>
+        </div>
+      </section>
+    </section>
+
+    <section class="card scenarios-card">
+      <h2>FIRE Scenarios</h2>
+      <div id="scenarioResults" class="scenario-grid"></div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
